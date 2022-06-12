@@ -1,0 +1,73 @@
+:root {
+    /* Table width */
+    --table-width: 80%;
+
+    /* Column widths */
+    --title-width: 40%;
+    --author-width: 25%;
+    --pages-width: 10%;
+    --read-width: 10%;
+    --edit-width: 7.5%;
+    --remove-width: 7.5%;
+
+    /* Color library */
+    --button-hover-background: rgb(229, 199, 160);
+}
+
+#site-header-title {
+    width: 100%;
+    text-align: center;
+}
+#library-table {
+    /* padding: 0 5%; */
+    border-collapse: collapse;
+    width: 80%;
+    align-self: center;
+}
+
+#title-col {
+    width: var(--title-width);
+}
+
+#author-col {
+    width: var(--author-width);
+}
+
+#pages-col {
+    width: var(--pages-width);
+}
+
+#read-col {
+    width: var(--read-width);
+}
+
+#edit-col {
+    width: var(--edit-width)
+}
+
+#remove-col {
+    width: var(--remove-width);
+}
+
+#header-row > th {
+    border-bottom: 2px solid black;
+    padding: 0;
+}
+
+.table-header-button {
+    width: 100%;
+}
+
+#instructions {
+    align-self: center;
+    display: block;
+}
+
+.left-align-text {
+    text-align: left;
+}
+
+.center-text {
+    text-align: center;
+}
+

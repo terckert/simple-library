@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/book-object.js" defer></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/table-style.css">
+    <title>My Library</title>
+</head>
+<body onload="drawLibraryBody()">
+<!-- <body> -->
+    <header id="site-header">
+            <h1 id="site-header-title">My Reading List</h1> 
+    </header>
+    <!-- <div id="table-container"> -->
+    <table id="library-table">
+        <!-- Creating coloumn IDs -->
+        <colgroup>
+            <col id="title-col">
+            <col id="author-col">
+            <col id="pages-col">
+            <col id="read-col">
+            <col id="edit-col">
+            <col id="remove-col"        
+        </colgroup>
+        <tbody id="library-table-body">
+            <!-- Header row -->
+            <tr id="header-row">
+                <th>
+                    <button class="left-align-text table-header-button" title="Sort by title" value="Title"
+                    onclick="sortLibrary(this.value)">
+                        Title                          
+                    </button>
+                </th>
+                <th>
+                    <button class="left-align-text table-header-button" title="Sort by author" value="Author"
+                    onclick="sortLibrary(this.value)">
+                        Author
+                    </button>
+                </th>
+                <th>
+                    <button class="table-header-button" title="Sort by pages" value="Pages"
+                    onclick="sortLibrary(this.value)">
+                        Pages
+                    </button>
+                </th>
+                <th>
+                    <button class="table-header-button" title="Sort by read/unread" value="Read"
+                    onclick="sortLibrary(this.value)">
+                        Read
+                    </button>
+                </th>
+                <th class="header-row-tex">Edit</th>
+                <th class="header-row-text">Remove</th>
+            </tr>
+            <!-- Rest of table created by user, book-row id used for batch identifying -->
+            <!-- Below is a row used in testing to set element defaults. -->
+            <!-- <tr class="book-row">
+                <td>Testing Row</td>
+                <td>Tim E</td>
+                <td class="center-text">69</td>
+                <td class="center-text">Unread</td>
+                <td class="center-text"><button value="-1" onclick="showAddEdit('edit', this.value)">&#128221;</button></td>
+                <td class="center-text"><button value="-1" onclick="removeBookFromLibrary(this.value)">&#10060;</button></td>
+            </tr> -->
+
+        </tbody>
+    </table>
+    <p id="instructions">Click the add button to begin adding books to the library.</p>
+    <div id="add-item-container">
+        <button id="add-item" onclick="showAddEdit('add')">
+            <span id="add-item-plus">+</span>
+            <span id="add-item-text">Add</span>
+        </button>
+    </div>
+    <footer>
+        <span> Made by Timothy Erckert</span>
+        <a href="https://github.com/terckert/etch-a-sketch"><img id="github-logo" src="./images/GitHub-Mark-32px.png" alt=""></a>
+    </footer>
+    <!-- </div> -->
+    <div id="modal-container">
+        <div id="item-modal">
+            <button class="close-button" onclick="closeAddEdit()">&#10006;</button>
+            <div id="form-container">
+                <div id="item-form-title">Placeholder Text</div>
+                <form id="item-form" name="item-form">
+                    <table>
+                        <tr>
+                            <td><label for="Title">Title:</label></td>
+                            <td><input type="text" name="Title"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Author">Author:</label></td>
+                            <td><input type="text" name="Author"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Pages">Pages:</label></td>
+                            <td><input type="text" name="Pages"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Read">Status:</label></td>
+                            <td>
+                                <select name="Read" id="Read">
+                                    <option value="true" class="form-option">Read</option>
+                                    <option value="false" class="form-option">Unread</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <span id="form-btn-row">
+                    <button id="form-save-edit-btn" class="save-edit-btn form-btn">Placeholder</button>
+                    <span class="border-bar">&#9475;</span>
+                    <button class="cancel-btn form-btn" onclick="closeAddEdit()">Cancel</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
